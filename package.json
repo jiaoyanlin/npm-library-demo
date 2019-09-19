@@ -21,6 +21,7 @@
     "rollup-plugin-node-resolve": "^5.2.0"
   },
   "dependencies": {
+    "lodash": "^4.17.15",
     "the-answer": "^1.0.0"
   }
 }
