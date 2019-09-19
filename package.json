@@ -1,0 +1,21 @@
+{
+  "name": "npm-library-demo",
+  "version": "1.0.0",
+  "description": "使用rollup构建npm包（library）实战",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup -c ./build/rollup.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jiaoyanlin/npm-library-demo.git"
+  },
+  "keywords": [],
+  "author": "jiaoyanlin",
+  "license": "ISC",
+  "devDependencies": {
+    "rollup": "^1.21.4",
+    "rollup-plugin-json": "^4.0.0"
+  }
+}
