@@ -1,6 +1,7 @@
 import json from 'rollup-plugin-json';
 import resolvePlugin from 'rollup-plugin-node-resolve';
 import commonjsPlugin from 'rollup-plugin-commonjs';
+import babelPlugin from 'rollup-plugin-babel';
 const path = require('path');
 
 const resolve = function (filePath) {
@@ -11,7 +12,7 @@ export default {
     input: resolve('src/main.js'),
     output: {
         file: resolve('dist/bundle.js'),
-        format: 'es',
+        format: 'cjs',
         name: 'myLibrary'
     },
     plugins: [
@@ -27,8 +28,13 @@ export default {
                 moduleDirectory: 'node_modules'
             }
         }),
+        babelPlugin({
+            exclude: 'node_modules/**', // 只编译我们的源代码
+            runtimeHelpers: true,
+        }),
     ],
     // 作用：指出应将哪些模块视为外部模块，否则会被打包进最终的代码里
-    external: ['lodash'],
-    // external: id => /lodash/.test(id)
+    external: id => {
+        return /@babel\/runtime/.test(id) || /lodash/.test(id);
+    }
 };
