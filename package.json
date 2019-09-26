@@ -2,11 +2,22 @@
   "name": "npm-library-demo",
   "version": "1.0.0",
   "description": "使用rollup构建npm包（library）实战",
-  "main": "./dist/bundle.js",
+  "module": "es/index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rollup -c ./build/rollup.config.js"
+    "clean": "rm -rf ./dist/ ./es/ ./lib/",
+    "easy": "npm run clean && NODE_ENV=development rollup -w -c ./build/easy.config.js",
+    "node:dev": "npm run clean && NODE_ENV=development node ./build/dev.js",
+    "node:build": "npm run clean && NODE_ENV=production node ./build/build.js",
+    "start": "npm run clean && NODE_ENV=development rollup -w -c ./build/rollup.config.js",
+    "build": "npm run clean && NODE_ENV=production rollup -c ./build/rollup.config.js"
   },
+  "files": [
+    "dist",
+    "lib",
+    "es",
+    "types"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/jiaoyanlin/npm-library-demo.git"
@@ -22,7 +33,9 @@
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-json": "^4.0.0",
-    "rollup-plugin-node-resolve": "^5.2.0"
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-serve": "^1.0.1",
+    "rollup-plugin-uglify": "^6.0.3"
   },
   "dependencies": {
     "@babel/runtime": "^7.6.0",

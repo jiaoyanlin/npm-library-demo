@@ -3,7 +3,7 @@ import { version } from '../package.json';
 import answer from 'the-answer';
 import _merge from 'lodash/merge';
 
-console.log('version ' + version);
+console.log('version:' + version);
 
 let users = {
 	'data': [{ 'user': 'barney' }, { 'user': 'fred' }]
