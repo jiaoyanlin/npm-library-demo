@@ -5,9 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>example</title>
+    <style>
+        .img-wrap {
+            display: none;
+        }
+        .img {
+            width: 100px;
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="loading">loading</div>
+    <div class="img-wrap">
+        <img class="img img-1" src="" alt="">
+        <img class="img img-2" src="" alt="">
+        <img class="img img-3" src="" alt="">
+        <img class="img img-4" src="" alt="">
+    </div>
 </body>
 <script src="./index.js"></script>
+<script>
+    const images = [
+        './static/images/1.jpg',
+        './static/images/2.jpg',
+        './static/images/3.jpg',
+        './static/images/4.jpg',
+    ];
+    window.npmLibraryDemo(images, function() {
+        console.log('---------图片预加载完毕');
+        document.querySelector('.loading').style.display = 'none';
+        document.querySelector('.img-wrap').style.display = 'block';
+        for (var i = 0; i < images.length; i++) {
+            document.querySelector('.img-' + (i + 1)).setAttribute('src', images[i]);
+        }
+    });
+</script>
 </html>
