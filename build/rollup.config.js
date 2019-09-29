@@ -4,6 +4,7 @@ import commonjs from 'rollup-plugin-commonjs';
 import babelPlugin from 'rollup-plugin-babel';
 import serve from 'rollup-plugin-serve';
 import { uglify } from 'rollup-plugin-uglify';
+import { eslint } from 'rollup-plugin-eslint'
 
 const path = require('path');
 const resolveFile = function (filePath) {
@@ -60,6 +61,12 @@ const config = outputs.map((output, i) => {
                 customResolveOptions: {
                     moduleDirectory: 'node_modules'
                 }
+            }),
+            eslint({
+                throwOnError: true,
+                throwOnWarning: true,
+                include: ['src/**'],
+                exclude: ['node_modules/**']
             }),
             babelPlugin({
                 exclude: 'node_modules/**', // 只编译我们的源代码
