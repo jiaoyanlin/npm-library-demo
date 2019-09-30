@@ -1,6 +1,6 @@
 {
   "name": "npm-library-demo",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "使用rollup构建npm包（library）实战",
   "module": "es/index.js",
   "main": "lib/index.js",
