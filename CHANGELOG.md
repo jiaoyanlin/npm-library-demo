@@ -1,3 +1,17 @@
+## [1.0.3](https://github.com/jiaoyanlin/npm-library-demo/compare/v1.0.2...v1.0.3) (2019-10-01)
+
+
+### Bug Fixes
+
+* 推送标签到远程 ([fec1ca6](https://github.com/jiaoyanlin/npm-library-demo/commit/fec1ca6))
+
+
+### Features
+
+* 增加publish相关命令 ([8b30bc0](https://github.com/jiaoyanlin/npm-library-demo/commit/8b30bc0))
+
+
+
 ## [1.0.2](https://github.com/jiaoyanlin/npm-library-demo/compare/v1.0.1...v1.0.2) (2019-10-01)
 
 
