@@ -1,3 +1,12 @@
+## [1.0.4](https://github.com/jiaoyanlin/npm-library-demo/compare/v1.0.3...v1.0.4) (2019-10-01)
+
+
+### Features
+
+* 使用prepublishOnly替代prepublish ([950c0db](https://github.com/jiaoyanlin/npm-library-demo/commit/950c0db))
+
+
+
 ## [1.0.3](https://github.com/jiaoyanlin/npm-library-demo/compare/v1.0.2...v1.0.3) (2019-10-01)
 
 
