@@ -1,4 +1,18 @@
-## 1.0.1 (2019-09-30)
+## [1.0.2](https://github.com/jiaoyanlin/npm-library-demo/compare/v1.0.1...v1.0.2) (2019-10-01)
+
+
+### Bug Fixes
+
+* 添加fs ([11e1a6f](https://github.com/jiaoyanlin/npm-library-demo/commit/11e1a6f))
+
+
+### Features
+
+* 完善自动生成changelog并打标签命令 ([f0c2338](https://github.com/jiaoyanlin/npm-library-demo/commit/f0c2338))
+
+
+
+## [1.0.1](https://github.com/jiaoyanlin/npm-library-demo/compare/9664f3b...v1.0.1) (2019-09-30)
 
 
 ### Bug Fixes
