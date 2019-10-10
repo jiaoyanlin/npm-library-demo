@@ -2,7 +2,6 @@
 module.exports = {
     //一旦配置了root，ESlint停止在父级目录中查找配置文件
     root: true,
-    parser: "babel-eslint",
     //想要支持的JS语言选项
     parserOptions: {
         //启用ES6语法支持(如果支持es6的全局变量{env: {es6: true}}，则默认启用ES6语法支持)
@@ -11,7 +10,8 @@ module.exports = {
         //默认为script
         sourceType: "module",
         //支持其他的语言特性
-        ecmaFeatures: {}
+        ecmaFeatures: {},
+        parser: "babel-eslint"
     },
     //代码运行的环境，每个环境都会有一套预定义的全局对象，不同环境可以组合使用
     env: {
@@ -30,10 +30,9 @@ module.exports = {
     },
     //支持第三方插件的规则，插件以eslint-plugin-作为前缀，配置时该前缀可省略
     //检查vue文件需要eslint-plugin-vue插件
-    // plugins: ["vue"],
+    plugins: ["vue"],
     //集成推荐的规则
-    // extends: ["eslint:recommended", "plugin:vue/essential"],
-    extends: ["eslint:recommended"],
+    extends: ["eslint:recommended", "plugin:vue/essential"],
     //启用额外的规则或者覆盖默认的规则
     //规则级别分别：为"off"(0)关闭、"warn"(1)警告、"error"(2)错误--error触发时，程序退出
     rules: {

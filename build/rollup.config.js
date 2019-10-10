@@ -4,7 +4,8 @@ import commonjs from 'rollup-plugin-commonjs';
 import babelPlugin from 'rollup-plugin-babel';
 import serve from 'rollup-plugin-serve';
 import { uglify } from 'rollup-plugin-uglify';
-import { eslint } from 'rollup-plugin-eslint'
+import { eslint } from 'rollup-plugin-eslint';
+import vue from 'rollup-plugin-vue';
 
 const path = require('path');
 const resolveFile = function (filePath) {
@@ -15,27 +16,27 @@ console.log('----------dev:', process.env.NODE_ENV, isDev)
 
 // 通过控制outputs中对应的isExternal、isUglify值来决定打包的文件是否启用external和uglify
 const outputs = [
-    {
-        file: resolveFile('lib/index.js'),
-        format: 'cjs',
-        isExternal: true,
-    },
-    {
-        file: resolveFile('es/index.js'),
-        format: 'es',
-        isExternal: true,
-    },
+    // {
+    //     file: resolveFile('lib/index.js'),
+    //     format: 'cjs',
+    //     isExternal: true,
+    // },
+    // {
+    //     file: resolveFile('es/index.js'),
+    //     format: 'es',
+    //     isExternal: true,
+    // },
     {
         file: resolveFile('dist/index.js'),
         format: 'umd',
         name: 'npmLibraryDemo',
     },
-    {
-        file: resolveFile('dist/index.min.js'),
-        format: 'umd',
-        name: 'npmLibraryDemo',
-        isUglify: true,
-    }
+    // {
+    //     file: resolveFile('dist/index.min.js'),
+    //     format: 'umd',
+    //     name: 'npmLibraryDemo',
+    //     isUglify: true,
+    // }
 ].map(i => {
     i.sourcemap = isDev; // 开发模式：开启sourcemap文件的生成
     return i;
@@ -68,6 +69,7 @@ const config = outputs.map((output, i) => {
                 include: ['src/**'],
                 exclude: ['node_modules/**']
             }),
+            vue(),
             babelPlugin({
                 exclude: 'node_modules/**', // 只编译我们的源代码
                 runtimeHelpers: true,

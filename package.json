@@ -39,6 +39,8 @@
     "@babel/preset-env": "^7.6.0",
     "babel-eslint": "^10.0.3",
     "conventional-changelog-cli": "^2.0.23",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.2.3",
     "rollup": "^1.21.4",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^10.1.0",
@@ -46,12 +48,14 @@
     "rollup-plugin-json": "^4.0.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-serve": "^1.0.1",
-    "rollup-plugin-uglify": "^6.0.3"
+    "rollup-plugin-uglify": "^6.0.3",
+    "rollup-plugin-vue": "^5.0.1",
+    "vue-template-compiler": "^2.6.10"
   },
   "dependencies": {
     "@babel/runtime": "^7.6.0",
     "@babel/runtime-corejs2": "^7.6.0",
     "lodash": "^4.17.15",
-    "the-answer": "^1.0.0"
+    "vue": "^2.6.10"
   }
 }
